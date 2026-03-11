@@ -66,3 +66,28 @@ nums = [1000000000, 1000000000, 1000000000, 1000000000]
 target = -294967296
 solution = Solution()
 print(solution.fourSum(nums, target))
+
+
+# THE 3 SUM CLOSET 
+class Solution(object):
+    def threeSumClosest(self, nums, target):
+        nums.sort()
+        closest_sum = float('inf'):
+        for i in range(len(nums)-2):
+            left,right= i+1, len(nums)-1
+            while left<right:
+                current_sum= nums[i]+nums[left]+nums[right]
+                if abs(current_sum-target)<abs(closest_sum-target):
+                    closest_sum=current_sum
+                    if current_sum<target:
+                        left+=1
+                    elif current_sum>targer:
+                        right-=1
+                    else:
+                        return current_sum
+                    return closest_sum
+                nums=[-1,2,1,-4]
+                target=1
+                solution=solution()
+                print(solution.threesumcloserst(nums,target))
+                
